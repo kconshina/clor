@@ -2,54 +2,31 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Словарь IT-профессионала: Обычные термины vs Жаргон | Компьютерные системы</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Словарь IT-профессионала</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             background: linear-gradient(145deg, #eef2f7 0%, #d4dfe9 100%);
-            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            font-family: 'Segoe UI', Roboto, sans-serif;
             padding: 2rem 1rem;
             color: #1a2a3a;
         }
-
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
+        .container { max-width: 1400px; margin: 0 auto; }
         .hero {
             text-align: center;
-            margin-bottom: 2rem;
             padding: 1.5rem 1rem;
             background: rgba(8, 28, 45, 0.9);
-            backdrop-filter: blur(8px);
             border-radius: 56px;
-            box-shadow: 0 20px 30px -12px rgba(0,0,0,0.25);
-            border: 1px solid rgba(255,255,255,0.3);
+            margin-bottom: 2rem;
         }
-
         .hero h1 {
             font-size: 2rem;
-            font-weight: 700;
-            letter-spacing: -0.3px;
-            background: linear-gradient(135deg, #ffffff, #bee0ff);
-            background-clip: text;
+            background: linear-gradient(135deg, #fff, #bee0ff);
             -webkit-background-clip: text;
-            color: transparent;
+            -webkit-text-fill-color: transparent;
         }
-
-        .hero p {
-            color: #eef4ff;
-            margin-top: 0.5rem;
-            font-weight: 500;
-        }
-
+        .hero p { color: #eef4ff; margin-top: 0.5rem; }
         .badge-group {
             display: flex;
             justify-content: center;
@@ -57,7 +34,6 @@
             margin-top: 1rem;
             flex-wrap: wrap;
         }
-
         .badge {
             background: #1e4a76;
             color: white;
@@ -66,7 +42,6 @@
             font-size: 0.85rem;
             font-weight: 600;
         }
-
         .stats {
             display: flex;
             justify-content: center;
@@ -74,25 +49,20 @@
             margin-bottom: 2rem;
             flex-wrap: wrap;
         }
-
         .stat-card {
             background: white;
             border-radius: 60px;
             padding: 0.5rem 1.5rem;
             box-shadow: 0 8px 18px rgba(0,0,0,0.05);
             font-weight: 600;
-            font-size: 1rem;
             border: 1px solid #ccddee;
         }
-
         .stat-number {
             color: #0f4c6b;
             font-size: 1.6rem;
             font-weight: 800;
             margin-right: 6px;
         }
-
-        /* TABS стиль */
         .tabs {
             display: flex;
             justify-content: center;
@@ -100,7 +70,6 @@
             margin-bottom: 2rem;
             flex-wrap: wrap;
         }
-
         .tab-btn {
             background: #ecf3f8;
             border: none;
@@ -111,29 +80,17 @@
             cursor: pointer;
             transition: 0.2s;
             color: #1f5068;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
             font-family: inherit;
         }
-
         .tab-btn.active {
             background: #1f6e93;
             color: white;
-            box-shadow: 0 8px 18px rgba(31,110,147,0.3);
         }
-
-        .tab-btn:first-child.active {
-            background: #2c7da0;
-        }
-        .tab-btn:last-child.active {
-            background: #b4430c;
-        }
-
+        .tab-btn:last-child.active { background: #b4430c; }
         .search-box {
             max-width: 500px;
             margin: 0 auto 2rem auto;
-            position: relative;
         }
-
         .search-box input {
             width: 100%;
             padding: 0.85rem 1.2rem;
@@ -143,54 +100,39 @@
             background: white;
             box-shadow: 0 8px 20px rgba(0,0,0,0.1);
             outline: none;
-            transition: all 0.2s;
-            border: 1px solid transparent;
         }
-.search-box input:focus {
-            border-color: #2c7da0;
-            box-shadow: 0 10px 25px rgba(44,125,160,0.2);
-        }
-
         .dictionary-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
             gap: 1.5rem;
         }
-
         .term-card {
             background: rgba(255,255,255,0.94);
             border-radius: 28px;
             padding: 1.2rem 1.4rem;
-            transition: all 0.2s ease;
             border: 1px solid rgba(255,255,255,0.8);
             box-shadow: 0 12px 22px -12px rgba(0,0,0,0.1);
+            transition: 0.2s;
         }
-
         .term-card:hover {
             transform: translateY(-3px);
             background: white;
-            box-shadow: 0 20px 28px -12px rgba(0,0,0,0.2);
         }
-
         .term-title {
             font-size: 1.4rem;
             font-weight: 700;
             background: linear-gradient(120deg, #0b3b4f, #1c6e8f);
-            background-clip: text;
             -webkit-background-clip: text;
-            color: transparent;
-            margin-bottom: 0.4rem;
+            -webkit-text-fill-color: transparent;
             border-left: 4px solid #2c7da0;
             padding-left: 14px;
         }
-
         .term-desc {
             font-size: 0.94rem;
             line-height: 1.45;
             color: #2c3e44;
             margin-top: 6px;
         }
-
         .slang-tag {
             display: inline-block;
             background: #ffefe5;
@@ -200,9 +142,8 @@
             border-radius: 30px;
             padding: 0.2rem 0.7rem;
             margin-left: 12px;
-            vertical-align: middle;
+            -webkit-text-fill-color: #c25d2e;
         }
-
         .no-results {
             text-align: center;
             grid-column: 1 / -1;
@@ -212,17 +153,14 @@
             font-size: 1.1rem;
             color: #4a6272;
         }
-
         footer {
             text-align: center;
             margin-top: 3rem;
             font-size: 0.85rem;
             color: #2c5a6e;
-            font-weight: 500;
             padding: 1rem;
             border-top: 1px solid rgba(0,0,0,0.08);
         }
-
         @media (max-width: 680px) {
             .term-title { font-size: 1.2rem; }
             .tab-btn { padding: 0.5rem 1.2rem; font-size: 0.9rem; }
@@ -232,8 +170,8 @@
 <body>
 <div class="container">
     <div class="hero">
-        <h1>📖 Словарь профессии: Компьютерные системы и комплексы</h1>
-        <p>96 терминов: «обычная профессиональная лексика» и «IT-жаргон / сленг»</p>
+        <h1>📖 Словарь: Компьютерные системы и комплексы</h1>
+        <p>96 терминов: обычная лексика и IT-жаргон</p>
         <div class="badge-group">
             <div class="badge">💻 Аппаратные средства</div>
             <div class="badge">🖧 Сетевые технологии</div>
@@ -242,213 +180,185 @@
     </div>
 
     <div class="stats">
-        <div class="stat-card"><span class="stat-number" id="totalCount">0</span> всего терминов</div>
-        <div class="stat-card"><span class="stat-number" id="normalCount">0</span> 📘 обычных слов</div>
-        <div class="stat-card"><span class="stat-number" id="slangCount">0</span> 🔥 жаргон / сленг</div>
+        <div class="stat-card"><span class="stat-number" id="totalCount">0</span> всего</div>
+        <div class="stat-card"><span class="stat-number" id="normalCount">0</span> 📘 обычных</div>
+        <div class="stat-card"><span class="stat-number" id="slangCount">0</span> ⚡ жаргон</div>
     </div>
 
     <div class="tabs">
-        <button class="tab-btn active" data-tab="normal">📘 Обычные термины (профессиональные)</button>
+        <button class="tab-btn active" data-tab="normal">📘 Обычные термины</button>
         <button class="tab-btn" data-tab="slang">⚡ Жаргон / Сленг</button>
     </div>
 
     <div class="search-box">
-        <input type="text" id="searchInput" placeholder="🔍 Поиск по терминам и описаниям...">
+        <input type="text" id="searchInput" placeholder="🔍 Поиск по терминам...">
     </div>
 
     <div class="dictionary-grid" id="dictionaryGrid"></div>
-    <footer>Словарь по специальности «Компьютерные системы и комплексы» | Разделение: официальная лексика и профессиональный сленг</footer>
+    <footer>Словарь по специальности «Компьютерные системы и комплексы»</footer>
 </div>
 
 <script>
-    // --------------------------------------------------------------
-    // БАЗА ДАННЫХ: каждый объект имеет term, desc, type: "normal" или "slang"
-    // Итого 96 терминов (56 обычных + 40 жаргонных/сленговых)
-    // --------------------------------------------------------------
-    const allTerms = [
-        // ---------- ОБЫЧНЫЕ (ПРОФЕССИОНАЛЬНЫЕ) ТЕРМИНЫ: 56 шт ----------
-{ term: "Процессор (ЦПУ)", desc: "Центральное устройство компьютера, выполняющее арифметические, логические операции и управляющее работой системы.", type: "normal" },
-        { term: "Материнская плата", desc: "Главная печатная плата, объединяющая процессор, память, слоты расширения и чипсет.", type: "normal" },
-        { term: "Оперативная память (ОЗУ)", desc: "Энергозависимая память для временного хранения данных и команд процессора.", type: "normal" },
-        { term: "Жесткий диск (HDD)", desc: "Накопитель на магнитных пластинах для долговременного хранения данных.", type: "normal" },
-        { term: "SSD (твердотельный накопитель)", desc: "Накопитель на флеш-памяти без движущихся частей. Высокая скорость.", type: "normal" },
-        { term: "Видеокарта (GPU)", desc: "Устройство для обработки графики, ускоряет вывод изображения, ИИ-вычисления.", type: "normal" },
-        { term: "Блок питания (БП)", desc: "Преобразует сетевое напряжение в стабильные уровни для компонентов ПК.", type: "normal" },
-        { term: "Шина данных", desc: "Линии связи, по которым передаются данные между компонентами компьютера.", type: "normal" },
-        { term: "Шина адреса", desc: "Передаёт адрес ячейки памяти или устройства, с которым взаимодействует процессор.", type: "normal" },
-        { term: "Контроллер прерываний", desc: "Управляет приоритетами прерываний от устройств ввода-вывода.", type: "normal" },
-        { term: "Чипсет", desc: "Набор микросхем (северный+южный мост), связывающий CPU с памятью и периферией.", type: "normal" },
-        { term: "Кэш-память", desc: "Сверхбыстрая память малого объёма для ускорения доступа к часто используемым данным.", type: "normal" },
-        { term: "RAID-массив", desc: "Технология объединения дисков для отказоустойчивости или производительности.", type: "normal" },
-        { term: "BIOS/UEFI", desc: "Базовый набор прошивок для инициализации оборудования и загрузки ОС.", type: "normal" },
-        { term: "Операционная система (ОС)", desc: "Комплекс программ, управляющий ресурсами компьютера и интерфейсом пользователя.", type: "normal" },
-        { term: "Драйвер", desc: "Программа, позволяющая ОС взаимодействовать с оборудованием.", type: "normal" },
-        { term: "Виртуализация", desc: "Создание изолированных виртуальных машин на одном физическом сервере.", type: "normal" },
-        { term: "Гипервизор", desc: "Платформа для управления виртуальными машинами (VMware, Hyper-V, KVM).", type: "normal" },
-        { term: "Контейнеризация", desc: "Лёгкая изоляция приложений (Docker) на уровне ОС.", type: "normal" },
-        { term: "Кластер", desc: "Группа компьютеров для отказоустойчивости или высокой производительности.", type: "normal" },
-        { term: "Сетевой интерфейс (NIC)", desc: "Адаптер для подключения к сети (Ethernet, Wi-Fi).", type: "normal" },
-        { term: "Маршрутизатор", desc: "Устройство, направляющее пакеты между разными сетями.", type: "normal" },
-        { term: "Коммутатор (Switch)", desc: "Соединяет устройства внутри одной сети по MAC-адресам.", type: "normal" },
-        { term: "Межсетевой экран (Firewall)", desc: "Фильтрация трафика, блокировка нежелательных подключений.", type: "normal" },
-        { term: "Протокол TCP/IP", desc: "Стек протоколов, основа интернета. TCP — надёжная передача, IP — маршрутизация.", type: "normal" },
-        { term: "DNS", desc: "Система доменных имён, преобразует домены в IP-адреса.", type: "normal" },
-        { term: "DHCP", desc: "Протокол автоматической выдачи IP-адресов клиентам.", type: "normal" },
-        { term: "Серверная стойка (Rack)", desc: "Стандартизированный каркас для монтажа серверного оборудования (19 дюймов).", type: "normal" },
-        { term: "Облачные вычисления", desc: "Предоставление вычислительных ресурсов по требованию через интернет (IaaS, PaaS).", type: "normal" },
-        { term: "Архитектура x86-64", desc: "Набор инструкций, используемый в большинстве ПК и серверов.", type: "normal" },
-        { term: "ARM-архитектура", desc: "Энергоэффективная RISC-архитектура для мобильных устройств и серверов.", type: "normal" },
-        { term: "Параллельные вычисления", desc: "Одновременное выполнение множества вычислений (многоядерность, GPU).", type: "normal" },
-        { term: "Конвейер команд", desc: "Техника процессоров, когда несколько инструкций обрабатываются на разных этапах.", type: "normal" },
-        { term: "Кэш-когерентность", desc: "Согласованность данных в многоядерных системах.", type: "normal" },
-        { term: "NUMA", desc: "Неоднородный доступ к памяти для многопроцессорных систем.", type: "normal" },
-        { term: "PCI Express (PCIe)", desc: "Высокоскоростная шина для видеокарт, NVMe и устройств расширения.", type: "normal" },
-        { term: "NVMe", desc: "Протокол доступа к SSD через PCIe с низкой задержкой.", type: "normal" },
-        { term: "SATA", desc: "Последовательный интерфейс для подключения HDD/SSD.", type: "normal" },
-        { term: "USB", desc: "Стандарт подключения периферии (клавиатуры, мыши, флешек).", type: "normal" },
-        { term: "Thunderbolt", desc: "Интерфейс от Intel, объединяющий PCIe и DisplayPort.", type: "normal" },
-        { term: "ECC-память", desc: "Память с коррекцией ошибок для серверов и рабочих станций.", type: "normal" },
-        { term: "Гибридный накопитель (SSHD)", desc: "Гибрид HDD + небольшой SSD-кэш.", type: "normal" },
-        { term: "SMART-мониторинг", desc: "Система самодиагностики дисков для прогнозирования отказов.", type: "normal" },
-        { term: "Охлаждение (активное/пассивное)", desc: "Активное — вентиляторы, пассивное — радиаторы. Жидкостное для мощных систем.", type: "normal" },
-        { term: "Форм-фактор (ATX, Mini-ITX)", desc: "Стандарты размеров материнских плат и корпусов.", type: "normal" },
-        { term: "Служба каталогов (Active Directory)", desc: "Централизованное управление пользователями и ресурсами.", type: "normal" },
-        { term: "LDAP", desc: "Протокол доступа к службам каталогов для аутентификации.", type: "normal" },
-        { term: "DMI (Direct Media Interface)", desc: "Связь между процессором и чипсетом в Intel-платформах.", type: "normal" },
-        { term: "Сеть хранения данных (SAN)", desc: "Высокоскоростная инфраструктура (Fibre Channel) для хранилищ.", type: "normal" },
-        { term: "NAS", desc: "Сетевое хранилище с файловым доступом по SMB/NFS.", type: "normal" },
-        { term: "Резервное копирование (Backup)", desc: "Процесс создания копий данных для восстановления.", type: "normal" },
-        { term: "Бэкап-стратегия 3-2-1", desc: "Три копии данных, два разных носителя, одна офлайн-копия.", type: "normal" },
-        { term: "Двойной блок питания (Redundant PSU)", desc: "Два БП в сервере для отказоустойчивости.", type: "normal" },
-        { term: "Трассировка печатной платы", desc: "Разводка медных дорожек на плате для соединения компонентов.", type: "normal" },
-        { term: "Мультипроцессорность", desc: "Использование двух и более физических процессоров на одной материнской плате.", type: "normal" },
-        { term: "Многопоточность", desc: "Способность процессора выполнять несколько потоков инструкций (SMT).", type: "normal" },
-        // дополнительно обычные (чтоб четко отделить от жаргона) - из старой базы, но они не сленг
-        { term: "Регистры процессора", desc: "Сверхбыстрые ячейки памяти внутри CPU.", type: "normal" },
-        { term: "Арифметико-логическое устройство (АЛУ)", desc: "Блок процессора для математических и логических операций.", type: "normal" },
-        { term: "FPU", desc: "Блок операций с плавающей точкой.", type: "normal" },
-        // ИТОГО обычных слов ровно 60? но для статистики сделаем массив жаргона отдельно.
+    // ======= ДАННЫЕ =======
+    const normalTerms = [
+        { term: "Процессор (ЦПУ)", desc: "Центральное устройство, выполняющее вычисления и управляющее системой." },
+        { term: "Материнская плата", desc: "Главная плата, объединяющая все компоненты ПК." },
+        { term: "Оперативная память (ОЗУ)", desc: "Энергозависимая память для временного хранения данных." },
+        { term: "Жесткий диск (HDD)", desc: "Накопитель на магнитных пластинах." },
+        { term: "SSD", desc: "Твердотельный накопитель на флеш-памяти." },
+        { term: "Видеокарта (GPU)", desc: "Устройство для обработки графики и ИИ-вычислений." },
+        { term: "Блок питания", desc: "Преобразует сетевое напряжение для компонентов." },
+        { term: "Шина данных", desc: "Линии для передачи данных между компонентами." },
+        { term: "Шина адреса", desc: "Передаёт адреса памяти и устройств." },
+        { term: "Контроллер прерываний", desc: "Управляет приоритетами прерываний." },
+        { term: "Чипсет", desc: "Набор микросхем, связывающий CPU с периферией." },
+        { term: "Кэш-память", desc: "Сверхбыстрая память для частых данных." },
+        { term: "RAID-массив", desc: "Объединение дисков для отказоустойчивости." },
+        { term: "BIOS/UEFI", desc: "Прошивка для инициализации оборудования." },
+        { term: "Операционная система", desc: "Управляет ресурсами и интерфейсом." },
+        { term: "Драйвер", desc: "Обеспечивает взаимодействие ОС с оборудованием." },
+        { term: "Виртуализация", desc: "Создание виртуальных машин на одном сервере." },
+        { term: "Гипервизор", desc: "Платформа для управления ВМ (VMware, KVM)." },
+        { term: "Контейнеризация", desc: "Изоляция приложений (Docker)." },
+        { term: "Кластер", desc: "Группа компьютеров для отказоустойчивости." },
+        { term: "Сетевой интерфейс (NIC)", desc: "Адаптер для подключения к сети." },
+        { term: "Маршрутизатор", desc: "Направляет пакеты между сетями." },
+        { term: "Коммутатор (Switch)", desc: "Соединяет устройства внутри сети." },
+        { term: "Межсетевой экран", desc: "Фильтрует трафик, блокирует угрозы." },
+        { term: "TCP/IP", desc: "Стек протоколов — основа интернета." },
+        { term: "DNS", desc: "Преобразует домены в IP-адреса." },
+        { term: "DHCP", desc: "Автоматическая выдача IP-адресов." },
+        { term: "Серверная стойка (Rack)", desc: "Каркас для монтажа оборудования." },
+        { term: "Облачные вычисления", desc: "Ресурсы по требованию через интернет." },
+        { term: "x86-64", desc: "Архитектура инструкций для ПК и серверов." },
+        { term: "ARM", desc: "Энергоэффективная RISC-архитектура." },
+        { term: "Параллельные вычисления", desc: "Одновременное выполнение задач." },
+        { term: "Конвейер команд", desc: "Обработка инструкций по этапам." },
+        { term: "Кэш-когерентность", desc: "Согласованность данных в многоядерных CPU." },
+        { term: "NUMA", desc: "Неоднородный доступ к памяти." },
+        { term: "PCI Express (PCIe)", desc: "Шина для видеокарт и NVMe." },
+        { term: "NVMe", desc: "Протокол доступа к SSD через PCIe." },
+        { term: "SATA", desc: "Интерфейс для подключения накопителей." },
+        { term: "USB", desc: "Стандарт для периферийных устройств." },
+        { term: "Thunderbolt", desc: "Интерфейс от Intel (PCIe+DisplayPort)." },
+        { term: "ECC-память", desc: "Память с коррекцией ошибок." },
+        { term: "SSHD", desc: "Гибрид HDD + SSD-кэш." },
+        { term: "SMART", desc: "Самодиагностика дисков." },
+        { term: "Система охлаждения", desc: "Активная (вентиляторы) или пассивная." },
+        { term: "Форм-фактор", desc: "ATX, Mini-ITX и др. стандарты." },
+        { term: "Active Directory", desc: "Служба каталогов для управления." },
+        { term: "LDAP", desc: "Протокол доступа к каталогам." },
+        { term: "DMI", desc: "Связь CPU и чипсета в Intel." },
+        { term: "SAN", desc: "Сеть хранения данных (Fibre Channel)." },
+        { term: "NAS", desc: "Сетевое хранилище с файловым доступом." },
+        { term: "Резервное копирование", desc: "Создание копий данных." },
+        { term: "Бэкап-стратегия 3-2-1", desc: "3 копии, 2 носителя, 1 офлайн." },
+        { term: "Redundant PSU", desc: "Два блока питания для отказоустойчивости." },
+        { term: "Трассировка платы", desc: "Разводка дорожек на печатной плате." },
+        { term: "Мультипроцессорность", desc: "Два и более CPU на одной плате." },
+        { term: "Многопоточность", desc: "Одновременное выполнение потоков (SMT)." }
     ];
 
-    // ---------- ЖАРГОННЫЕ / СЛЕНГОВЫЕ ТЕРМИНЫ (40 штук) ----------
     const slangTerms = [
-        { term: "Глаз", desc: "Жаргонное название вентилятора (кулера), иногда «вертушка».", type: "slang" },
-        { term: "Материнка", desc: "Сленг от «материнская плата».", type: "slang" },
-        { term: "Проц", desc: "Сокращение от «процессор».", type: "slang" },
-        { term: "Оперативка", desc: "Сленговое название оперативной памяти (ОЗУ).", type: "slang" },
-        { term: "Хард", desc: "Жёсткий диск (HDD).", type: "slang" },
-        { term: "Ссдшка (SSDшка)", desc: "Твердотельный накопитель в разговорной речи.", type: "slang" },
-        { term: "Видюха", desc: "Видеокарта.", type: "slang" },
-        { term: "БПшка", desc: "Блок питания.", type: "slang" },
-        { term: "Мать", desc: "Сокращение от материнской платы.", type: "slang" },
-        { term: "Сокет", desc: "Разъём для процессора (жаргон, но технический).", type: "slang" },
-        { term: "Камень", desc: "Процессор (особенно мощный).", type: "slang" },
-        { term: "Сервак", desc: "Серверное оборудование.", type: "slang" },
-        { term: "Свитч", desc: "Сетевой коммутатор (Switch).", type: "slang" },
-        { term: "Роутер", desc: "Маршрутизатор (от router).", type: "slang" },
-        { term: "Винда", desc: "Операционная система Windows.", type: "slang" },
-        { term: "Линуксоид", desc: "Пользователь Linux (иногда шутливое).", type: "slang" },
-        { term: "Дрова", desc: "Драйверы устройств.", type: "slang" },
-        { term: "Биос", desc: "BIOS / UEFI (жаргон).", type: "slang" },
-        { term: "Кэш", desc: "Кэш-память (жаргонное употребление).", type: "slang" },
-        { term: "Ребаут", desc: "Перезагрузка системы (от reboot).", type: "slang" },
-        { term: "Шина", desc: "Шина данных/адреса в разговорной речи.", type: "slang" },
-        { term: "Гигабайтник", desc: "Устройство или плата на 1 ГБ (шутл.).", type: "slang" },
-        { term: "Термопаста", desc: "Паста для отвода тепла (часто говорят «термопасту намажь»).", type: "slang" },
-        { term: "Кулер", desc: "Система охлаждения процессора (вентилятор+радиатор).", type: "slang" },
-        { term: "Разгон", desc: "Оверклокинг — увеличение тактовой частоты компонентов.", type: "slang" },
-        { term: "Троттлинг", desc: "Снижение частоты при перегреве (жаргон).", type: "slang" },
-        { term: "Синий экран смерти (BSOD)", desc: "Критическая ошибка Windows.", type: "slang" },
-        { term: "Глюк", desc: "Непредвиденный сбой в работе ПО или железа.", type: "slang" },
-        { term: "Лаги", desc: "Задержки, «тормоза» в системе или игре.", type: "slang" },
-        { term: "Флешка", desc: "USB-накопитель.", type: "slang" },
-        { term: "Клава", desc: "Клавиатура.", type: "slang" },
-        { term: "Мышка", desc: "Компьютерная мышь.", type: "slang" },
-        { term: "Серверняк", desc: "Комната/стойка с серверами (датацентр в миниатюре).", type: "slang" },
-        { term: "Бэкап", desc: "Резервная копия данных (от backup).", type: "slang" },
-        { term: "Апгрейд", desc: "Модернизация комплектующих.", type: "slang" },
-        { term: "Железо", desc: "Компьютерные компоненты, «хардвер».", type: "slang" },
-        { term: "Софт", desc: "Программное обеспечение.", type: "slang" },
-        { term: "Корпус-башня", desc: "Tower-корпус (жаргон).", type: "slang" },
-        { term: "Резак", desc: "Блок питания (неформально от англ. PSU).", type: "slang" },
-        { term: "Моноблок", desc: "Компьютер «всё в одном» (жаргонное).", type: "slang" },
+        { term: "Глаз", desc: "Вентилятор (кулер)." },
+        { term: "Материнка", desc: "Материнская плата." },
+        { term: "Проц", desc: "Процессор." },
+        { term: "Оперативка", desc: "Оперативная память." },
+        { term: "Хард", desc: "Жёсткий диск (HDD)." },
+        { term: "Ссдшка", desc: "SSD-накопитель." },
+        { term: "Видюха", desc: "Видеокарта." },
+        { term: "БПшка", desc: "Блок питания." },
+        { term: "Мать", desc: "Материнская плата." },
+        { term: "Сокет", desc: "Разъём для процессора." },
+        { term: "Камень", desc: "Процессор (мощный)." },
+        { term: "Сервак", desc: "Сервер." },
+        { term: "Свитч", desc: "Сетевой коммутатор." },
+        { term: "Роутер", desc: "Маршрутизатор." },
+        { term: "Винда", desc: "Windows." },
+        { term: "Линуксоид", desc: "Пользователь Linux." },
+        { term: "Дрова", desc: "Драйверы." },
+        { term: "Биос", desc: "BIOS/UEFI." },
+        { term: "Кэш", desc: "Кэш-память." },
+        { term: "Ребаут", desc: "Перезагрузка системы." },
+        { term: "Шина", desc: "Шина данных/адреса." },
+        { term: "Гигабайтник", desc: "Устройство на 1 ГБ (шутл)." },
+        { term: "Термопаста", desc: "Паста для отвода тепла." },
+        { term: "Кулер", desc: "Система охлаждения." },
+        { term: "Разгон", desc: "Оверклокинг — увеличение частоты." },
+        { term: "Троттлинг", desc: "Снижение частоты при перегреве." },
+        { term: "BSOD", desc: "Синий экран смерти Windows." },
+        { term: "Глюк", desc: "Сбой в ПО или железе." },
+        { term: "Лаги", desc: "Задержки, тормоза." },
+        { term: "Флешка", desc: "USB-накопитель." },
+        { term: "Клава", desc: "Клавиатура." },
+        { term: "Мышка", desc: "Компьютерная мышь." },
+        { term: "Серверняк", desc: "Серверная комната/стойка." },
+        { term: "Бэкап", desc: "Резервная копия." },
+        { term: "Апгрейд", desc: "Модернизация комплектующих." },
+        { term: "Железо", desc: "Аппаратные компоненты." },
+        { term: "Софт", desc: "Программное обеспечение." },
+        { term: "Башня", desc: "Tower-корпус." },
+        { term: "Резак", desc: "Блок питания (неформ.)." },
+        { term: "Моноблок", desc: "Компьютер «всё в одном»." }
     ];
 
-    // соединяем обычные (allTerms) + жаргон (slangTerms) + добиваем до общего количества = 96
-    // Посчитаем сколько обычных: currently allTerms имеет 60 (за счёт добавленных) но для ровного счёта возьмем первые 56 из изначального массива + несколько, чтобы баланс. 
-    // Проще: создадим полный массив finalTerms = normalBase + slangTerms.
-    // normalBase возьмём из allTerms но только type normal — их там 60, обрежем до 56 чтобы не дублировать? но 56+40=96. Сделаем первый массив нормальных слов из 56 штук.
-    const normalBase = allTerms.filter(t => t.type === "normal").slice(0, 56);   // ровно 56 обычных
-    const finalTerms = [...normalBase, ...slangTerms];  // итого 56 + 40 = 96
+    // Объединяем: 56 обычных + 40 жаргонных = 96
+    const allTerms = [...normalTerms, ...slangTerms];
+    const totalCount = allTerms.length;
 
-    // проверка
-    console.log("Обычных слов:", normalBase.length, "Жаргонных:", slangTerms.length, "Всего:", finalTerms.length);
-
-    // вспомогательные функции
+    // DOM
     const grid = document.getElementById('dictionaryGrid');
     const searchInput = document.getElementById('searchInput');
-    const totalSpan = document.getElementById('totalCount');
-    const normalSpan = document.getElementById('normalCount');
-    const slangSpan = document.getElementById('slangCount');
+    document.getElementById('totalCount').textContent = totalCount;
+    document.getElementById('normalCount').textContent = normalTerms.length;
+    document.getElementById('slangCount').textContent = slangTerms.length;
 
-    totalSpan.innerText = finalTerms.length;
-    normalSpan.innerText = normalBase.length;
-    slangSpan.innerText = slangTerms.length;
-
-    let activeTab = "normal"; // normal / slang
-    let currentSearch = "";
-
-    function escapeHtml(str) {
-        return str.replace(/[&<>]/g, m => m === '&' ? '&amp;' : m === '<' ? '&lt;' : '&gt;');
-    }
+    let activeTab = 'normal';
+    let searchQuery = '';
 
     function render() {
-        let filtered = finalTerms.filter(item => {
-            if (activeTab === "normal" && item.type !== "normal") return false;
-            if (activeTab === "slang" && item.type !== "slang") return false;
-            if (currentSearch.trim() !== "") {
-                const lowerSearch = currentSearch.trim().toLowerCase();
-                return item.term.toLowerCase().includes(lowerSearch) || item.desc.toLowerCase().includes(lowerSearch);
+        const filtered = allTerms.filter(item => {
+            const isNormal = normalTerms.includes(item);
+            if (activeTab === 'normal' && !isNormal) return false;
+            if (activeTab === 'slang' && isNormal) return false;
+            if (searchQuery.trim()) {
+                const q = searchQuery.toLowerCase();
+                return item.term.toLowerCase().includes(q) || item.desc.toLowerCase().includes(q);
             }
             return true;
         });
 
-        if (filtered.length === 0) {
-            grid.innerHTML = `<div class="no-results">🔎 Ничего не найдено по запросу «${escapeHtml(currentSearch)}» в разделе «${activeTab === "normal" ? "Обычные термины" : "Жаргон"}»</div>`;
+        if (!filtered.length) {
+            grid.innerHTML = `<div class="no-results">🔎 Ничего не найдено по запросу «${searchQuery}»</div>`;
             return;
         }
 
-        let html = "";
-        for (let item of filtered) {
-            const slangBadge = item.type === "slang" ? '<span class="slang-tag">сленг</span>' : '';
-            html += `
+        grid.innerHTML = filtered.map(item => {
+            const isSlang = slangTerms.includes(item);
+            const tag = isSlang ? '<span class="slang-tag">сленг</span>' : '';
+            return `
                 <div class="term-card">
-                    <div class="term-title">${escapeHtml(item.term)} ${slangBadge}</div>
-                    <div class="term-desc">${escapeHtml(item.desc)}</div>
+                    <div class="term-title">${item.term} ${tag}</div>
+                    <div class="term-desc">${item.desc}</div>
                 </div>
             `;
-        }
-        grid.innerHTML = html;
+        }).join('');
     }
 
-    function onSearch() {
-        currentSearch = searchInput.value;
-        render();
-    }
-
-    // переключение вкладок
+    // Вкладки
     document.querySelectorAll('.tab-btn').forEach(btn => {
         btn.addEventListener('click', () => {
             document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
-            activeTab = btn.getAttribute('data-tab');
+            activeTab = btn.dataset.tab;
             render();
         });
     });
 
+    // Поиск
     searchInput.addEventListener('input', () => {
-        clearTimeout(window.searchDebounce);
-        window.searchDebounce = setTimeout(onSearch, 220);
+        searchQuery = searchInput.value;
+        render();
     });
 
     render();
